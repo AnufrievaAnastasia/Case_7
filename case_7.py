@@ -7,8 +7,8 @@ print('1.Просмотр каталога \n'
       '4.Количество файлов и каталогов \n '
       '5.Размер текущего каталога \n'
       '6.Поиск файла \n'
-      '7.Выход из программы \n'
-      'Выберете пункт меню: \n')
+      '7.Выход из программы')
+ans = int(input('Выберете пункт меню: \n'))
 
 def File(path, level = 1):
     print('Level=', level, 'Content:', os.listdir(path))
@@ -17,4 +17,5 @@ def File(path, level = 1):
             print('Спускаемся', path+'/'+i)
             File(path+'/'+i, level+1)
             print('Возвращаемся в', path)
-File(path)
+if ans == 1:
+    File(path)
