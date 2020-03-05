@@ -1,13 +1,20 @@
-import os
+import os, os.path
+path = '/Users/anastasiaanufrieva/Desktop/Files'
+print(path)
+print('1.Просмотр каталога \n'
+      '2.На уровень вверх \n'
+      '3.На уровень вниз \n '
+      '4.Количество файлов и каталогов \n '
+      '5.Размер текущего каталога \n'
+      '6.Поиск файла \n'
+      '7.Выход из программы \n'
+      'Выберете пункт меню: \n')
 
-
-def main():
-    while True:
-        print(os.getcwd())
-        print("MENU")
-        command = acceptCommand()
-        if command == "QUIT":
-            print("Работа программы завершена.")
-            break
-
-main()
+def File(path, level = 1):
+    print('Level=', level, 'Content:', os.listdir(path))
+    for i in os.listdir(path):
+        if os.path.isdir(path+'/'+i):
+            print('Спускаемся', path+'/'+i)
+            File(path+'/'+i, level+1)
+            print('Возвращаемся в', path)
+File(path)
