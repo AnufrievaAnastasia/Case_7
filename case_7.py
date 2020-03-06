@@ -1,5 +1,5 @@
 import os, os.path
-path = '/Users/anastasiaanufrieva/Desktop/Files'
+path = '/Users/.../Desktop/Files' #вместо точек имя пользователя + скопируй папочку себе на рабочий стол
 print(path)
 print('1.Просмотр каталога \n'
       '2.На уровень вверх \n'
